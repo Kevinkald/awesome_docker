@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  yolov5x_salmon_and_head_detector:
+    image: "docker.biosort.io/yolov5x-salmon-and-head-detector:latest"
+    # image: yolov5
+    ports:
+      - "5000:5000"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    ipc: host
